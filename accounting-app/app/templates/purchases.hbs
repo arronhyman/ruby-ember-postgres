@@ -1,0 +1,50 @@
+<div class="container-fluid no-padding">
+    <div class="banner"  id="purchases-banner">
+        <h3>Manage Recent Transactions</h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="purchase-table table">
+                <thead>
+                    <th>ID</th>
+                    <th>Active</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Purchase Date</th>
+                    <th>Vendor</th>
+                </thead>
+                <tbody id="purchase-table-items">
+                    {{#each model.purchases as |purchase|}}
+                    <tr>
+                        <td>
+                            {{purchase.id}}
+                        </td>
+                        <td>
+                            <button {{action 'toggleActive' purchase}}>{{purchase.active}}</button>
+                        </td>
+                        <td>
+                            {{purchase.amount}}
+                        </td>
+                        <td>
+                            {{purchase.category}}
+                        </td>
+                        <td>
+                            {{purchase.description}}
+                        </td>
+                        <td>
+                            {{purchase.purchase_date}}
+                        </td>
+                        <td>
+                            {{purchase.vendor_id}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

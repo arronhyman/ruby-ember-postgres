@@ -1,0 +1,6 @@
+{
+  "name": "accounting-app",
+  "dependencies": {
+    "jquery-easing-original": "~1.3.1"
+  }
+}

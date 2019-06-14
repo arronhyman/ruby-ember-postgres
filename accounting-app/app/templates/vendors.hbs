@@ -1,0 +1,39 @@
+<div class="container-fluid no-padding">
+    <div class="banner" id="vendors-banner">
+        <h3>Manage Vendors</h3>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+            <table class="vendor-table table">
+                <thead>
+                    <th>ID</th>
+                    <th>Active</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                </thead>
+                <tbody id="vendor-table-items">
+                    {{#each model.vendors as |vendor|}}
+                    <tr>
+                        <td>
+                            {{vendor.id}}
+                        </td>
+                        <td>
+                            <button {{action 'toggleActive' vendor}}>{{vendor.active}}</button>
+                        </td>
+                        <td>
+                            {{vendor.category}}
+                        </td>
+                        <td>
+                            {{vendor.name}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
